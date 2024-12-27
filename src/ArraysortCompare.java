@@ -39,31 +39,29 @@ public class ArraysortCompare {
 
     }
 
-    private static void selectionSort(int[] firstArray) {
-        for (int i = 0; i < firstArray.length; i++) {
-            int minIndex = min(firstArray, i, firstArray.length);
+    private static void selectionSort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int minIndex = min(arr, i, arr.length);
 
-            int tmp = firstArray[i];
-            firstArray[i] = firstArray[minIndex];
-            firstArray[minIndex] = tmp;
+            int tmp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = tmp;
         }
-
-        System.out.println("Selection sorted : " + arrayToString(firstArray));
+        System.out.println("Selection sorted : " + arrayToString(arr));
     }
 
-    private static void bubbleSort(int[] secondArray) {
+    private static void bubbleSort(int[] arr) {
         boolean needIteration = true;
         while (needIteration) {
             needIteration = false;
-            for (int i = 1; i < secondArray.length; i++) {
-                if (secondArray[i] < secondArray[i - 1]) {
-                    swap(secondArray, i, i - 1);
+            for (int i = 1; i < arr.length; i++) {
+                if (arr[i] < arr[i - 1]) {
+                    swap(arr, i, i - 1);
                     needIteration = true;
                 }
             }
         }
-
-        System.out.println("Bubble sorted : " + arrayToString(secondArray));
+        System.out.println("Bubble sorted : " + arrayToString(arr));
     }
 
     //additional methods
